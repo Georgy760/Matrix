@@ -6,7 +6,7 @@
 #include <string>
 #include "Exception.cpp"
 using namespace std;
-
+const double eps = 1e-9;
 template <typename temp>
 class BaseMatrix
 {
@@ -16,6 +16,7 @@ protected:
 public:
     BaseMatrix(int r = 2, int cl = 2) : row(r), columns(cl) //Construct
     {
+        //cout << "BaseMatrixConstructing\n";
         if (row <= 0 || columns <= 0)
         {
             throw WrongSizeException("Matrix size error", row, columns);
@@ -32,6 +33,7 @@ public:
 
     BaseMatrix(const BaseMatrix& matrix) //Construct
     {
+        //cout << "BaseMatrixConstructing\n";
         row = matrix.row;
         columns = matrix.columns;
 
@@ -54,6 +56,7 @@ public:
 
     virtual ~BaseMatrix()
     {
+        //cout << "BaseMatrix_Destructing\n";
         if (arr != nullptr)
         {
             for (int i = 0; i < row; ++i)
@@ -121,7 +124,7 @@ public:
         return arr[rw][cln];
     }
 
-
+/*
     template<typename T1>
     friend ostream& operator<<(ostream& out, BaseMatrix<T1>& matrix)
     {
@@ -215,7 +218,7 @@ public:
 
         return in;
     }
-
+*/
 };
 
 
@@ -223,10 +226,13 @@ template<typename T1>
 class Matrix : public BaseMatrix<T1>
 {
 public:
-    Matrix(int row = 2, int columns = 2) : BaseMatrix<T1>(row, columns) {}
+    Matrix(int row = 2, int columns = 2) : BaseMatrix<T1>(row, columns) {
+        //cout << "MatrixConstructing\n";
+    }
 
     Matrix(istream& in)
     {
+        //cout << "MatrixConstructing\n";
         in >> this->row >> this->columns;
 
         if (this->row <= 0 || this->columns <= 0)
@@ -249,7 +255,19 @@ public:
             }
         }
     }
-
+    ~Matrix()
+    {
+        //cout << "Matrix_Destructing\n";
+        if (this->arr != nullptr)
+        {
+            for (int i = 0; i < this->row; ++i)
+            {
+                delete[] this->arr[i];
+            }
+            delete[] this->arr;
+            this->arr = nullptr;
+        }
+    } //Destruct
     int getRows(){
         return this->row;
     }
@@ -328,6 +346,8 @@ public:
         return answer;
     }
 
+
+
     void RandomNums()
     {
         for (int i = 0; i < this->row; ++i)
@@ -352,8 +372,71 @@ public:
             cout << '\n';
         }
     }
+
+    void swapRows (int index1, int index2) //Поменять местами две строки
+    {
+        if (index1 < 0 || index2 < 0 || index1 >= this->row || index2 >= this->row)
+            return ;
+        for (int i = 0; i < this->columns; ++ i)
+            swap (this->arr[index1][i], this->arr[index2][i]);
+        //this->print();
+    }
+
+    void swapColumns (int index1, int index2) //Поменять местами два столбца
+    {
+        if (index1 < 0 || index2 < 0 || index1 >= this->columns || index2 >= this->columns)
+            return ;
+        for (int i = 0; i < this->row; ++ i)
+            swap (this->arr[i][index1], this->arr[i][index2]);
+        //this->print();
+    }
+
+    Matrix<T1> gauss(){ //Приведение матрицы к треугольному виду, метод Гаусса  с главным элементом
+        cout << "gauss\n";
+        int i, j, k;
+        T1 countSwaps = 1;
+        Matrix<T1> a = *this;
+        for(i = 0; i < this->row; ++ i){
+            //Находим строку с максимальным первым элементом
+            int iMax = i;
+            for (j = i + 1; j < this->row; ++ j)
+                if (abs (a.arr[j][i]) > abs (a.arr[iMax][i]))
+                    iMax = j;
+            if (abs (a.arr[iMax][i]) < eps)
+                continue;
+            for (k = 0; k < this->columns; ++ k)
+                swap (a.arr[i][k], a.arr[iMax][k]);
+            countSwaps = - countSwaps * (i != iMax ? 1 : - 1);
+
+            //  вычитаем текущую строку из всех остальных
+            for (j = i + 1; j < this->row; ++ j)
+            {
+                double q = - a.arr[j][i] / a.arr[i][i];
+                for (k = this->columns - 1; k >= i; -- k)
+                    a.arr[j][k] += q * a.arr[i][k];
+            }
+            cout << "iMax: " << iMax << endl;
+        }
+        // умножаем матрицу на -1, если мы сделали  нечётное количество перестановок строк
+        // в итоге определитель результирующей матрицы  будет равен определителю начальной матрицы
+        cout << "gauss result\n";
+        a = countSwaps * a;
+        a.print();
+        return a;
+    }
 };
 
+
+/*template<typename T>
+Matrix<T> operator*(const int a, const Matrix<T>& b){
+    Matrix<T> tempMat = b;
+    for(int row = 0; row < tempMat.getRows(); row++){
+        for(int column = 0; column < tempMat.getColumns(); column++){
+            tempMat(row,column) *= a;
+        }
+    }
+    return tempMat;
+}*/
 
 template<typename T>
 Matrix<T> operator*(const T a, const Matrix<T>& b){
@@ -365,6 +448,17 @@ Matrix<T> operator*(const T a, const Matrix<T>& b){
     }
     return tempMat;
 }
+
+/*template<typename T>
+Matrix<T> operator*(const Matrix<T>& b, const int a){
+    Matrix<T> tempMat = b;
+    for(int row = 0; row < tempMat.getRows(); row++){
+        for(int column = 0; column < tempMat.getColumns(); column++){
+            tempMat(row,column) *= a;
+        }
+    }
+    return tempMat;
+}*/
 
 template<typename T>
 Matrix<T> operator*(const Matrix<T>& b, const T a){
@@ -446,11 +540,15 @@ int main() {
      */
     ifstream inA("MatrixA.txt");
     ifstream inB("MatrixB.txt");
-    Matrix<int> A(inA);
+    Matrix<double> A(inA);
     A.print();
     Matrix<int> B(inB);
     B.print();
     cout << "\nMatrix added\n" ;
+    A.gauss();
+    //A.swapRows(0, 1);
+    //A.swapColumns(0, 1);
+    A.print();
     //Matrix<double> newMatrix = A&;
     //cout << "\nТест\n";
     //Sole<int>  newSole(A,B);
