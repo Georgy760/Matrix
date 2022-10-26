@@ -1,0 +1,10 @@
+#1
+SS_The system has a single unique solution!
+X(1x2)
+-1, 4, 
+
+#2
+SS_The system has a single unique solution!
+X(1x2)
+-0.833333, 3.16667, 
+

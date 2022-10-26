@@ -56,14 +56,35 @@ build CMakeFiles\Matrix.dir\main.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Do
   TARGET_COMPILE_PDB = CMakeFiles\Matrix.dir\
   TARGET_PDB = Matrix.pdb
 
-build CMakeFiles\Matrix.dir\Exception.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\Exception.cpp || cmake_object_order_depends_target_Matrix
+build CMakeFiles\Matrix.dir\Matrix.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\Matrix.cpp || cmake_object_order_depends_target_Matrix
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
   OBJECT_DIR = CMakeFiles\Matrix.dir
   OBJECT_FILE_DIR = CMakeFiles\Matrix.dir
   TARGET_COMPILE_PDB = CMakeFiles\Matrix.dir\
   TARGET_PDB = Matrix.pdb
 
-build CMakeFiles\Matrix.dir\Complex.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\Complex.cpp || cmake_object_order_depends_target_Matrix
+build CMakeFiles\Matrix.dir\file_reader.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\file_reader.cpp || cmake_object_order_depends_target_Matrix
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
+  OBJECT_DIR = CMakeFiles\Matrix.dir
+  OBJECT_FILE_DIR = CMakeFiles\Matrix.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Matrix.dir\
+  TARGET_PDB = Matrix.pdb
+
+build CMakeFiles\Matrix.dir\file_writer.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\file_writer.cpp || cmake_object_order_depends_target_Matrix
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
+  OBJECT_DIR = CMakeFiles\Matrix.dir
+  OBJECT_FILE_DIR = CMakeFiles\Matrix.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Matrix.dir\
+  TARGET_PDB = Matrix.pdb
+
+build CMakeFiles\Matrix.dir\gaussian_elimination.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\gaussian_elimination.cpp || cmake_object_order_depends_target_Matrix
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
+  OBJECT_DIR = CMakeFiles\Matrix.dir
+  OBJECT_FILE_DIR = CMakeFiles\Matrix.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Matrix.dir\
+  TARGET_PDB = Matrix.pdb
+
+build CMakeFiles\Matrix.dir\utility.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user\Documents\Matrix\utility.cpp || cmake_object_order_depends_target_Matrix
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++20
   OBJECT_DIR = CMakeFiles\Matrix.dir
   OBJECT_FILE_DIR = CMakeFiles\Matrix.dir
@@ -78,7 +99,7 @@ build CMakeFiles\Matrix.dir\Complex.cpp.obj: CXX_COMPILER__Matrix_Debug E$:\user
 #############################################
 # Link the executable Matrix.exe
 
-build Matrix.exe: CXX_EXECUTABLE_LINKER__Matrix_Debug CMakeFiles\Matrix.dir\main.cpp.obj CMakeFiles\Matrix.dir\Exception.cpp.obj CMakeFiles\Matrix.dir\Complex.cpp.obj
+build Matrix.exe: CXX_EXECUTABLE_LINKER__Matrix_Debug CMakeFiles\Matrix.dir\main.cpp.obj CMakeFiles\Matrix.dir\Matrix.cpp.obj CMakeFiles\Matrix.dir\file_reader.cpp.obj CMakeFiles\Matrix.dir\file_writer.cpp.obj CMakeFiles\Matrix.dir\gaussian_elimination.cpp.obj CMakeFiles\Matrix.dir\utility.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
