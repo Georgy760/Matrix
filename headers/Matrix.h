@@ -12,14 +12,22 @@ class Matrix {
 
 public:
     Matrix();
-    Matrix(std::size_t i, std::size_t j = 0);
+    explicit Matrix(std::size_t i, std::size_t j = 0);
 
     //Matrix(Matrix&&);
     //Matrix& operator=(Matrix&&);
 
     Matrix(const Matrix&);
+    Matrix& operator+(const Matrix&);
+    Matrix& operator-(const Matrix&);
+    Matrix& operator*(const Matrix&);
+    Matrix& operator*(const size_t&);
+    Matrix& operator*(const float&);
+    Matrix& operator/(const Matrix&);
     Matrix& operator=(const Matrix&);
-
+    bool operator==(const Matrix&);
+    bool operator!=(const Matrix&);
+    Matrix& Transpose();
     ~Matrix();
 
     void Swap_Rows(std::size_t, std::size_t);
@@ -30,11 +38,14 @@ public:
     float& operator()(std::size_t);
     const float& operator()(std::size_t) const;
 
-    std::size_t get_rows() const;
-    std::size_t get_columns() const;
-    std::size_t get_size() const;
-    std::size_t get_number() const;
+    float Determinant();
 
+    [[nodiscard]] std::size_t get_rows() const;
+    [[nodiscard]] std::size_t get_columns() const;
+    [[nodiscard]] std::size_t get_size() const;
+    [[nodiscard]] std::size_t get_number() const;
+
+    void Print();
     void set_rows(std::size_t);
     void set_columns(std::size_t);
     void set_size(std::size_t);
@@ -46,6 +57,8 @@ private:
     std::size_t size;
     std::size_t number;
     float ** data;
+
+
 };
 
 class Result : public Matrix
@@ -58,7 +71,7 @@ public:
     Result& operator=(const Result&);
 
     void set_state(std::string s);
-    std::string get_state() const;
+    [[nodiscard]] std::string get_state() const;
 
 private:
     std::string state;
