@@ -7,7 +7,8 @@
 
 #include <cstddef>    //size_t
 #include <string>
-
+#include "rational.h"
+template <typename T>
 class Matrix {
     friend std::istream& operator>>(std::istream & os, Matrix  &m);
     friend std::ostream& operator<<(std::ostream &os, Matrix const &m);
@@ -36,6 +37,8 @@ public:
     float& operator()(std::size_t, std::size_t);
     const float& operator()(std::size_t, std::size_t) const;
 
+
+
     float& operator()(std::size_t);
     const float& operator()(std::size_t) const;
 
@@ -57,12 +60,12 @@ private:
     std::size_t columns;
     std::size_t size;
     std::size_t number;
-    float ** data;
+    T ** data;
 
 
 };
-
-class Result : public Matrix
+template <typename T>
+class Result : public Matrix<T>
 {
 public:
     Result();

@@ -17,8 +17,9 @@ private:
 public:
     rational(int num, int denom);
     rational(int num);
-    int getNum() const;
-    int getDenom() const;
+
+    int getNumerator() const;
+    int getDenominator() const;
     rational operator+(const rational &a) const;
     rational operator+(const int &a) const;
     rational operator-(const rational &a) const;
@@ -27,9 +28,16 @@ public:
     rational operator*(const int &a) const;
     rational operator/(const rational &a) const;
     rational operator/(const int &a) const;
-
+    operator int() const;
+    operator float() const;
     bool operator==(const rational &a) const;
+    bool operator==(const float &a) const;
+    bool operator==(const int &a) const;
     bool operator!=(const rational &a) const;
+    bool operator!=(const float &a) const;
+    bool operator!=(const int &a) const;
+
+
 
     ~rational();
 };

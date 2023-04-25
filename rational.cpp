@@ -25,12 +25,12 @@ rational::rational(int num){
 }
 
 
-int rational::getNum() const{
+int rational::getNumerator() const{
     return numerator;
 }
 
 
-int rational::getDenom() const{
+int rational::getDenominator() const{
     return denominator;
 }
 rational rational::operator+(const rational &a) const{
@@ -63,13 +63,30 @@ rational rational::operator/(const int &a) const{
     return rational(this -> denominator * a);
 }
 
-
+rational::operator int() const {
+    return numerator/denominator;
+}
+rational::operator float() const {
+    return float(numerator)/float(denominator);
+}
 
 bool rational::operator==(const rational &a) const {
     return bool(this->numerator == a.numerator && denominator == a.denominator);
 }
+bool rational::operator==(const float &a) const {
+    return bool(float(this->numerator)/float(this->denominator) == a);
+}
+bool rational::operator==(const int &a) const {
+    return bool(this->numerator/this->denominator == a);
+}
 bool rational::operator!=(const rational &a) const {
     return bool(this->numerator != a.numerator || denominator != a.denominator);
+}
+bool rational::operator!=(const float &a) const {
+    return bool(float(this->numerator)/float(this->denominator) != a);
+}
+bool rational::operator!=(const int &a) const {
+    return bool(this->numerator/this->denominator != a);
 }
 
 rational::~rational()
@@ -99,5 +116,12 @@ std::istream &operator>>(std::istream &os, rational &r) {
 
     return os;
 }
+
+
+
+
+
+
+
 
 
