@@ -39,7 +39,7 @@ int rational::getDenominator() const{
 rational rational::operator+(const rational &a) const{
     return rational(this->numerator * a.denominator + a.numerator * this->denominator, this -> denominator * a.denominator);
 }
-rational rational::operator+(const int &a) const{
+rational rational::operator+(int a) const{
     rational tmp(a,a);
     return rational(this->numerator * tmp.denominator + tmp.numerator * this->denominator, this -> denominator * tmp.denominator);
 }
@@ -47,7 +47,7 @@ rational rational::operator+(const int &a) const{
 rational rational::operator-(const rational &a) const{
     return rational(this->numerator * a.denominator - a.numerator * this->denominator, this -> denominator * a.denominator);
 }
-rational rational::operator-(const int &a) const{
+rational rational::operator-(int a) const{
     rational tmp(a,a);
     return rational(this->numerator * tmp.denominator - tmp.numerator * this->denominator, this -> denominator * tmp.denominator);
 }
@@ -55,14 +55,14 @@ rational rational::operator-(const int &a) const{
 rational rational::operator*(const rational &a) const{
     return rational(this->numerator * a.numerator, this -> denominator * a.denominator);
 }
-rational rational::operator*(const int &a) const {
+rational rational::operator*(int a) const {
     return rational(this->numerator * a);
 }
 
 rational rational::operator/(const rational &a) const{
     return rational(this->numerator * a.denominator, this -> denominator * a.numerator);
 }
-rational rational::operator/(const int &a) const{
+rational rational::operator/(int a) const{
     return rational(this -> denominator * a);
 }
 
@@ -76,19 +76,19 @@ rational::operator float() const {
 bool rational::operator==(const rational &a) const {
     return bool(this->numerator == a.numerator && denominator == a.denominator);
 }
-bool rational::operator==(const float &a) const {
+bool rational::operator==(float a) const {
     return bool(float(this->numerator)/float(this->denominator) == a);
 }
-bool rational::operator==(const int &a) const {
+bool rational::operator==(int a) const {
     return bool(this->numerator/this->denominator == a);
 }
 bool rational::operator!=(const rational &a) const {
     return bool(this->numerator != a.numerator || denominator != a.denominator);
 }
-bool rational::operator!=(const float &a) const {
+bool rational::operator!=(float a) const {
     return bool(float(this->numerator)/float(this->denominator) != a);
 }
-bool rational::operator!=(const int &a) const {
+bool rational::operator!=(int a) const {
     return bool(this->numerator/this->denominator != a);
 }
 

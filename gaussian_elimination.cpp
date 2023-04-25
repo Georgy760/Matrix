@@ -23,7 +23,7 @@ void Gaussian_Elimination (Matrix& A, Matrix& B, Result& X_out, float epsilon)  
     X_out = Result(" ", 1, A.get_columns());
     X_out.set_number(A.get_number());
 
-    assert(A.get_rows() == B.get_rows() && A.get_columns() == X_out.get_size() && "size mismartch!");
+    assert(A.get_rows() == B.get_rows() && A.get_columns() == X_out.get_size() && "size mismatch!");
 
     std::size_t height = A.get_rows();
     std::size_t width = A.get_columns() + 1;
@@ -84,7 +84,7 @@ void Variable_Elemination(Matrix& AM)
 }
 
 
-void Backward_Substitution(Matrix& AM, Result& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number..
+void Backward_Substitution(Matrix& AM, Result& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number.
 {
     int count = 0;
     X_out.set_state("SS_The system has a single unique solution!");

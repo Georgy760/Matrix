@@ -65,7 +65,7 @@ Matrix& Matrix::operator+(const Matrix& M){
     }
     return *this;
 }
-
+//TODO change to +=, -=
 Matrix& Matrix::operator-(const Matrix& M){
     if(size == M.size) {
         for (std::size_t i = 0; i < rows; ++i) {
@@ -259,7 +259,7 @@ float Matrix::Determinant(){
             return result;
         }
 
-    } else RangeException(std::string("Matrix is not cubic"));
+    } else throw RangeException(std::string("Matrix is not cubic"));
     return result;
 }
 void Matrix::Swap_Rows(std::size_t i, std::size_t j)
@@ -299,9 +299,6 @@ std::size_t Matrix::get_columns() const { return columns; }
 std::size_t Matrix::get_size() const { return size; }
 std::size_t Matrix::get_number() const {return number; }
 
-void Matrix::set_rows(std::size_t r) { rows = r; }
-void Matrix::set_columns(std::size_t c) { columns = c; }
-void Matrix::set_size(std::size_t s) { size = s; }
 void Matrix::set_number(std::size_t n) { number = n; }
 
 std::istream& operator>>(std::istream& is, Matrix& m) {
@@ -354,7 +351,7 @@ Result::Result(const Result& R)
         :Matrix(R) , state(R.state)
 {
 }
-
+//TODO найти решение для перегрузки
 Result& Result::operator=(const Result& R)
 {
     Matrix::operator=(R);

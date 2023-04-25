@@ -21,7 +21,6 @@ public:
     bool sizet_writing(const std::size_t&);
     bool char_writing(const char&);
     bool string_writing(const std::string&);
-    bool rational_writing(const rational&);
 public:
     const char* file_name;
     std::ofstream fout;

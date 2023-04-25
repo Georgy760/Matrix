@@ -153,10 +153,10 @@ CMakeFiles/Matrix.dir/main.cpp.obj: F:\Matrix\main.cpp \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
+ F:\Matrix\headers/file_writer.h F:\Matrix\headers/gaussian_elimination.h \
+ F:\Matrix\headers/Matrix.h F:\Matrix\headers/utility.h \
  F:\Matrix\headers/file_reader.h F:\Matrix\headers/file_writer.h \
- F:\Matrix\headers/gaussian_elimination.h F:\Matrix\headers/Matrix.h \
- F:\Matrix\headers/utility.h F:\Matrix\headers/file_reader.h \
- F:\Matrix\headers/file_writer.h F:\Matrix\headers/rational.h \
+ F:\Matrix\headers/rational.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc

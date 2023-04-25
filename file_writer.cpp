@@ -50,10 +50,3 @@ bool File_Writer::string_writing(const std::string& s)
     }
     return false;
 }
-
-bool File_Writer::rational_writing(const rational& r){
-    if(fout << &r) {
-        return true;
-    }
-    return false;
-}

@@ -22,21 +22,21 @@ public:
     int getNumerator() const;
     int getDenominator() const;
     rational operator+(const rational &a) const;
-    rational operator+(const int &a) const;
+    rational operator+(int a) const;
     rational operator-(const rational &a) const;
-    rational operator-(const int &a) const;
+    rational operator-(int a) const;
     rational operator*(const rational &a) const;
-    rational operator*(const int &a) const;
+    rational operator*(int a) const;
     rational operator/(const rational &a) const;
-    rational operator/(const int &a) const;
+    rational operator/(int a) const;
     operator int() const;
     operator float() const;
     bool operator==(const rational &a) const;
-    bool operator==(const float &a) const;
-    bool operator==(const int &a) const;
+    bool operator==(float a) const;
+    bool operator==(int a) const;
     bool operator!=(const rational &a) const;
-    bool operator!=(const float &a) const;
-    bool operator!=(const int &a) const;
+    bool operator!=(float a) const;
+    bool operator!=(int a) const;
 
 
 
