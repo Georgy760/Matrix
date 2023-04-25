@@ -59,3 +59,11 @@ bool File_Reader::string_reading(std::string& s_out)
 
     return false;
 }
+
+bool File_Reader::rational_reading(rational& r_out) {
+    if(fin >> r_out) {
+        return true;
+    }
+    std::cout << "Unable to read a rational number, possibly incomplete data or data type mismatch.\n";
+    return false;
+}

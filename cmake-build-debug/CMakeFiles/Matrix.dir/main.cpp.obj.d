@@ -153,6 +153,7 @@ CMakeFiles/Matrix.dir/main.cpp.obj: C:\Users\gosha\Matrix-main\main.cpp \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
+ C:\Users\gosha\Matrix-main\headers/rational.h \
  C:\Users\gosha\Matrix-main\headers/file_writer.h \
  C:\Users\gosha\Matrix-main\headers/gaussian_elimination.h \
  C:\Users\gosha\Matrix-main\headers/Matrix.h \

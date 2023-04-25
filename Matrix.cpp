@@ -7,6 +7,7 @@
 #include <cstddef>
 #include <cassert>
 #include <utility> //std::swap
+#include <sstream>
 
 class RangeException : public std::exception {
 protected:
@@ -301,6 +302,29 @@ void Matrix::set_rows(std::size_t r) { rows = r; }
 void Matrix::set_columns(std::size_t c) { columns = c; }
 void Matrix::set_size(std::size_t s) { size = s; }
 void Matrix::set_number(std::size_t n) { number = n; }
+
+std::istream &operator>>(std::istream &os, Matrix &m) {
+    for(int i = 0; i < m.rows; i++) {
+        for (int j = 0; j < m.columns; j++) {
+            os >> m.data[i][j];
+        }
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const Matrix &m) {
+    std::ostringstream output_text;    // Declare an output stringstream
+    for(int i = 0; i < m.rows; i++){
+        for(int j = 0; j < m.columns; j++) {
+            output_text << m.data[i][j] << ' ';
+        }
+        output_text << '\n';
+        }
+    os << output_text.str();
+
+    return os;
+}
+
 
 
 Result::Result () : Matrix(), state("")

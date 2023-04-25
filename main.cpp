@@ -99,15 +99,23 @@ void TerminalMatrix() {
 }
 
 void Debug() {
-    std::cout << "\nEnter rational A: (numerator, denominator)\n";
+
+    Matrix A(2,2);
+    cin >> A;
+    cout << A;
+    /*std::cout << "\nEnter rational A: (numerator, denominator)\n";
     int numerator, denominator;
-    std::cin >> numerator >> denominator;
-    rational A(numerator, denominator);
-    cout << "\nA: " << A.getNum() << "/" << A.getDenom() << "\n";
+    //std::cin >> numerator >> denominator;
+    rational A(0);
+    cin >> A;
+    //cout << "\nA: " << A.getNum() << "/" << A.getDenom() << "\n";
+    cout << A;
     std::cout << "\nEnter rational B: (numerator, denominator)\n";
-    std::cin >> numerator >> denominator;
-    rational B(numerator, denominator);
-    cout << "\nB: " << B.getNum() << "/" << B.getDenom() << "\n";
+    //std::cin >> numerator >> denominator;
+    rational B(0);
+    //cout << "\nB: " << B.getNum() << "/" << B.getDenom() << "\n";
+    cin >> B;
+    cout << B;
     cout << "==: {}" << bool(A==B) << endl;
     cout << "!=: {}" << bool(A!=B) << endl;
     rational tests = A + B;
@@ -117,7 +125,7 @@ void Debug() {
     tests = A * B;
     cout << "*: {}" <<  tests.getNum() <<"/"<<tests.getDenom() << endl;
     tests = A / B;
-    cout << "/: {}" <<  tests.getNum() <<"/"<<tests.getDenom() << endl;
+    cout << "/: {}" <<  tests.getNum() <<"/"<<tests.getDenom() << endl;*/
 
 
 }

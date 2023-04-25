@@ -1,3 +1,4 @@
+#include <sstream>
 #include "headers/rational.h"
 
 
@@ -74,3 +75,29 @@ bool rational::operator!=(const rational &a) const {
 rational::~rational()
 {
 }
+
+std::ostream &operator<<(std::ostream &os, const rational &r) {
+    std::ostringstream output_text;    // Declare an output stringstream
+
+    // Insert our output into the output stringstream object
+    output_text << r.numerator << '/' << r.denominator;
+
+    // Convert the output stringstream object to a string and insert it into
+    // the output stream
+    os << output_text.str();
+
+    return os;
+}
+
+std::istream &operator>>(std::istream &os, rational &r) {
+    char unused;
+
+    os >> r.numerator;      // Read numerator
+    os >> unused;             // Read / and ignore it
+    os >> r.denominator;    // Read denominator
+
+
+    return os;
+}
+
+

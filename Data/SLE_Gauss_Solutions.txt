@@ -1,5 +1,0 @@
-3#0
-SS_The system has a single unique solution!
-X(1x2)
-1, -0, 
-

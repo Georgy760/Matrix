@@ -9,6 +9,7 @@
 #include <fstream>
 #include <cstddef>
 #include <string>
+#include "rational.h"
 
 //read info from file
 class File_Reader {
@@ -20,6 +21,7 @@ public:
     bool sizet_reading(std::size_t&);
     bool char_reading(char&);
     bool string_reading(std::string&);
+    bool rational_reading(rational&);
 
 private:
     const char* file_name;
