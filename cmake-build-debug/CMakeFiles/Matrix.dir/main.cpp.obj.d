@@ -1,5 +1,5 @@
-CMakeFiles/Matrix.dir/main.cpp.obj: C:\Users\gosha\Matrix-main\main.cpp \
- C:\Users\gosha\Matrix-main\headers/Matrix.h \
+CMakeFiles/Matrix.dir/main.cpp.obj: F:\Matrix\main.cpp \
+ F:\Matrix\headers/Matrix.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -120,7 +120,7 @@ CMakeFiles/Matrix.dir/main.cpp.obj: C:\Users\gosha\Matrix-main\main.cpp \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cerrno \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc \
- C:\Users\gosha\Matrix-main\headers/file_reader.h \
+ F:\Matrix\headers/rational.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -153,12 +153,8 @@ CMakeFiles/Matrix.dir/main.cpp.obj: C:\Users\gosha\Matrix-main\main.cpp \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
- C:\Users\gosha\Matrix-main\headers/rational.h \
- C:\Users\gosha\Matrix-main\headers/file_writer.h \
- C:\Users\gosha\Matrix-main\headers/gaussian_elimination.h \
- C:\Users\gosha\Matrix-main\headers/Matrix.h \
- C:\Users\gosha\Matrix-main\headers/utility.h \
- C:\Users\gosha\Matrix-main\headers/file_reader.h \
- C:\Users\gosha\Matrix-main\headers/file_writer.h \
- C:\Users\gosha\Matrix-main\headers/rational.h \
+ F:\Matrix\headers/file_reader.h F:\Matrix\headers/file_writer.h \
+ F:\Matrix\headers/gaussian_elimination.h F:\Matrix\headers/Matrix.h \
+ F:\Matrix\headers/utility.h F:\Matrix\headers/file_reader.h \
+ F:\Matrix\headers/file_writer.h F:\Matrix\headers/rational.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream

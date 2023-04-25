@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/gosha/Matrix-main/cmake-build-debug"
+			"value" : "f:/Matrix/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -643,7 +643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gosha/Matrix-main/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "F:/Matrix/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/gosha/Matrix-main"
+			"value" : "F:/Matrix"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1335,7 +1335,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gosha/Matrix-main/cmake-build-debug"
+			"value" : "F:/Matrix/cmake-build-debug"
 		},
 		{
 			"name" : "Matrix_IS_TOP_LEVEL",
@@ -1359,7 +1359,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gosha/Matrix-main"
+			"value" : "F:/Matrix"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

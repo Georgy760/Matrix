@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/gosha/Matrix-main/cmake-build-debug",
-		"source" : "C:/Users/gosha/Matrix-main"
+		"build" : "F:/Matrix/cmake-build-debug",
+		"source" : "F:/Matrix"
 	},
 	"version" : 
 	{

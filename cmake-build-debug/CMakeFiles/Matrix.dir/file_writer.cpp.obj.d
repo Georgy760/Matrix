@@ -1,6 +1,5 @@
-CMakeFiles/Matrix.dir/file_writer.cpp.obj: \
- C:\Users\gosha\Matrix-main\file_writer.cpp \
- C:\Users\gosha\Matrix-main\headers/file_writer.h \
+CMakeFiles/Matrix.dir/file_writer.cpp.obj: F:\Matrix\file_writer.cpp \
+ F:\Matrix\headers/file_writer.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -153,6 +152,6 @@ CMakeFiles/Matrix.dir/file_writer.cpp.obj: \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
- C:\Users\gosha\Matrix-main\headers/rational.h \
+ F:\Matrix\headers/rational.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cassert \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/x86_64-w64-mingw32/include/assert.h

@@ -1,7 +1,6 @@
 CMakeFiles/Matrix.dir/gaussian_elimination.cpp.obj: \
- C:\Users\gosha\Matrix-main\gaussian_elimination.cpp \
- C:\Users\gosha\Matrix-main\headers/gaussian_elimination.h \
- C:\Users\gosha\Matrix-main\headers/Matrix.h \
+ F:\Matrix\gaussian_elimination.cpp \
+ F:\Matrix\headers/gaussian_elimination.h F:\Matrix\headers/Matrix.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -122,9 +121,9 @@ CMakeFiles/Matrix.dir/gaussian_elimination.cpp.obj: \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cerrno \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_string.tcc \
- C:\Users\gosha\Matrix-main\headers/Matrix.h \
- F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
- F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
+ F:\Matrix\headers/rational.h \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/exception \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_ptr.h \
@@ -148,9 +147,15 @@ CMakeFiles/Matrix.dir/gaussian_elimination.cpp.obj: \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
- F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
+ F:\Matrix\headers/Matrix.h \
+ F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/utility \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_relops.h \

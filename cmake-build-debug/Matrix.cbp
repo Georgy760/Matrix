@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/gosha/Matrix-main/cmake-build-debug"/>
+				<Option working_dir="F:/Matrix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matrix">
-				<Option output="C:/Users/gosha/Matrix-main/cmake-build-debug/Matrix.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/gosha/Matrix-main/cmake-build-debug"/>
+				<Option output="F:/Matrix/cmake-build-debug/Matrix.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Matrix/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="F:/CLion/CLion 2022.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matrix"/>
-					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matrix"/>
+					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matrix/fast">
-				<Option output="C:/Users/gosha/Matrix-main/cmake-build-debug/Matrix.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/gosha/Matrix-main/cmake-build-debug"/>
+				<Option output="F:/Matrix/cmake-build-debug/Matrix.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Matrix/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,73 +55,73 @@
 					<Add directory="F:/CLion/CLion 2022.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matrix/fast"/>
-					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matrix/fast"/>
+					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/gosha/Matrix-main/cmake-build-debug"/>
+				<Option working_dir="F:/Matrix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/gosha/Matrix-main/cmake-build-debug"/>
+				<Option working_dir="F:/Matrix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gosha/Matrix-main/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CLion/CLion 2022.3.3/bin/mingw/bin/mingw32-make.exe -f &quot;F:/Matrix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/gosha/Matrix-main/Matrix.cpp">
+		<Unit filename="F:/Matrix/Matrix.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/file_reader.cpp">
+		<Unit filename="F:/Matrix/file_reader.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/file_writer.cpp">
+		<Unit filename="F:/Matrix/file_writer.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/gaussian_elimination.cpp">
+		<Unit filename="F:/Matrix/gaussian_elimination.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/Matrix.h">
+		<Unit filename="F:/Matrix/headers/Matrix.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/file_reader.h">
+		<Unit filename="F:/Matrix/headers/file_reader.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/file_writer.h">
+		<Unit filename="F:/Matrix/headers/file_writer.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/gaussian_elimination.h">
+		<Unit filename="F:/Matrix/headers/gaussian_elimination.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/rational.h">
+		<Unit filename="F:/Matrix/headers/rational.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/headers/utility.h">
+		<Unit filename="F:/Matrix/headers/utility.h">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/main.cpp">
+		<Unit filename="F:/Matrix/main.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/rational.cpp">
+		<Unit filename="F:/Matrix/rational.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/utility.cpp">
+		<Unit filename="F:/Matrix/utility.cpp">
 			<Option target="Matrix"/>
 		</Unit>
-		<Unit filename="C:/Users/gosha/Matrix-main/CMakeLists.txt">
+		<Unit filename="F:/Matrix/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

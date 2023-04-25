@@ -1,5 +1,4 @@
-CMakeFiles/Matrix.dir/rational.cpp.obj: \
- C:\Users\gosha\Matrix-main\rational.cpp \
+CMakeFiles/Matrix.dir/rational.cpp.obj: F:\Matrix\rational.cpp \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -148,7 +147,7 @@ CMakeFiles/Matrix.dir/rational.cpp.obj: \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc \
- C:\Users\gosha\Matrix-main\headers/rational.h \
+ F:\Matrix\headers/rational.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
  F:/CLion/CLion\ 2022.3.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
