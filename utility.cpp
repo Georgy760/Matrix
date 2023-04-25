@@ -9,23 +9,23 @@
 #include <iostream>
 #include <cstddef>
 #include <cassert>
-
-bool Read_Matrix_Size (File_Reader& fr, Matrix& M)
+template <typename T>
+bool Read_Matrix_Size (File_Reader& fr, Matrix<T>& M)
 {
     char c;
     std::size_t row, col;
     if(fr.char_reading(c) && fr.char_reading(c) &&
        fr.sizet_reading(row) && fr.char_reading(c) &&
        fr.sizet_reading(col) && fr.char_reading(c)) {
-        M = Matrix(row, col);
+        M = Matrix<T>(row, col);
         return true;
     }
     else {
         return false;
     }
 }
-
-bool Read_Matrix_Data(File_Reader& fr, Matrix& M)
+template <typename T>
+bool Read_Matrix_Data(File_Reader& fr, Matrix<T>& M)
 {
     char c;
     for(std::size_t i = 0; i < M.get_rows(); ++i) {
@@ -37,8 +37,8 @@ bool Read_Matrix_Data(File_Reader& fr, Matrix& M)
     }
     return true;
 }
-
-bool Read_SLE(File_Reader& fr, Matrix& A, Matrix& B)
+template <typename T>
+bool Read_SLE(File_Reader& fr, Matrix<T>& A, Matrix<T>& B)
 {
     char c;
     std::size_t number;
@@ -66,8 +66,8 @@ bool Read_SLE(File_Reader& fr, Matrix& A, Matrix& B)
     return true;
 }
 
-
-bool Read_Result(File_Reader& fr, Result& R)
+template <typename T>
+bool Read_Result(File_Reader& fr, Result<T>& R)
 {
     std::string s;
     char c;
@@ -81,7 +81,7 @@ bool Read_Result(File_Reader& fr, Result& R)
         return false;
     }
     if('N' == s[0]) {
-        R = Result(s, 0, 0);
+        R = Result<T>(s, 0, 0);
         R.set_number(number);
         return true;
     }
@@ -91,7 +91,7 @@ bool Read_Result(File_Reader& fr, Result& R)
         return false;
     }
 
-    R = Result(s, m, n);
+    R = Result<T>(s, m, n);
     R.set_number(number);
 
     for(std::size_t i = 0; i < R.get_size(); ++i) {
@@ -104,8 +104,8 @@ bool Read_Result(File_Reader& fr, Result& R)
     return true;
 }
 
-
-bool Write_SLE_Solution(File_Writer& fw,const Result& X)
+template <typename T>
+bool Write_SLE_Solution(File_Writer& fw,const Result<T>& X)
 {
     if(!(fw.char_writing('#') && fw.sizet_writing(X.get_number()) && fw.char_writing('\n'))) {
         return false;

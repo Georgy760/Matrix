@@ -13,12 +13,15 @@
 #include <cstdint>  //int64_t
 #include <string>
 
-void Create_Augmented_Matrix(Matrix&, Matrix&, Matrix&);
-void Variable_Elemination(Matrix&);    //changing to upper triangular matrix besides last column
-void Backward_Substitution(Matrix&, Result&, float);
+template <typename T>
+void Create_Augmented_Matrix(Matrix<T>&, Matrix<T>&, Matrix<T>&);
+template <typename T>
+void Variable_Elemination(Matrix<T>&);    //changing to upper triangular matrix besides last column
+template <typename T>
+void Backward_Substitution(Matrix<T>&, Result<T>&, float);
 
-
-void Gaussian_Elimination (Matrix& A, Matrix& B, Result& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number..
+template <typename T>
+void Gaussian_Elimination (Matrix<T>& A, Matrix<T>& B, Result<T>& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number..
 {
     X_out = Result(" ", 1, A.get_columns());
     X_out.set_number(A.get_number());
@@ -28,15 +31,15 @@ void Gaussian_Elimination (Matrix& A, Matrix& B, Result& X_out, float epsilon)  
     std::size_t height = A.get_rows();
     std::size_t width = A.get_columns() + 1;
 
-    Matrix AM(height, width);
+    Matrix<T> AM(height, width);
 
     Create_Augmented_Matrix(A, B, AM);
     Variable_Elemination(AM);
     Backward_Substitution(AM, X_out, epsilon);
 }
 
-
-void Create_Augmented_Matrix(Matrix& A, Matrix& B, Matrix& AM_out) {
+template <typename T>
+void Create_Augmented_Matrix(Matrix<T>& A, Matrix<T>& B, Matrix<T>& AM_out) {
     assert(A.get_rows() == B.get_rows() && "size mismatch!");
     assert(AM_out.get_rows() == A.get_rows() && (AM_out.get_columns() == A.get_columns() + 1) && "size mismatch!");
 
@@ -51,8 +54,8 @@ void Create_Augmented_Matrix(Matrix& A, Matrix& B, Matrix& AM_out) {
     }
 }
 
-
-void Variable_Elemination(Matrix& AM)
+template <typename T>
+void Variable_Elemination(Matrix<T>& AM)
 {
     std::size_t height = AM.get_rows();
     std::size_t width = AM.get_columns();
@@ -83,8 +86,8 @@ void Variable_Elemination(Matrix& AM)
     }
 }
 
-
-void Backward_Substitution(Matrix& AM, Result& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number..
+template <typename T>
+void Backward_Substitution(Matrix<T>& AM, Result<T>& X_out, float epsilon)  //epsilon is necessary to take into account the behavioral deviations of float number..
 {
     int count = 0;
     X_out.set_state("SS_The system has a single unique solution!");

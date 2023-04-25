@@ -6,11 +6,11 @@
 #include "headers/rational.h"
 
 #include <iostream>
-
+template <typename T>
 void TerminalMatrix();
-
+template <typename T>
 void FileMatrix();
-
+template <typename T>
 void Debug();
 
 using namespace std;
@@ -27,7 +27,7 @@ int main() {
         switch (method) {
             case 1:
                 selected = true;
-                TerminalMatrix();
+                TerminalMatrix<T>();
                 break;
             case 2:
                 selected = true;
@@ -43,11 +43,11 @@ int main() {
     }
     return 0;
 }
-
+template <typename T>
 void FileMatrix() {
     File_Writer FW_G("../Data/SLE_Gauss_Solutions.txt");
-    Matrix A, B;
-    Result X;
+    Matrix<T> A, B;
+    Result<T> X;
     float epsilon = 0.0001;
 
     {
@@ -60,12 +60,13 @@ void FileMatrix() {
     }
 }
 
+template <typename T>
 void TerminalMatrix() {
     File_Writer FW_G("../Data/SLE_Gauss_Solutions.txt");
     int rows, columns;
     std::cout << "\nEnter matrix A size: (rows, columns)\n";
     std::cin >> rows >> columns;
-    Matrix A(rows, columns);
+    Matrix<T> A(rows, columns);
     for(int i = 0; i<rows; i++){
         std::cout << "\n";
         for(int j = 0; j<columns; j++){
@@ -76,7 +77,7 @@ void TerminalMatrix() {
     A.Print();
     std::cout << "\nEnter matrix B size: (rows, columns)\n";
     std::cin >> rows >> columns;
-    Matrix B(rows, columns);
+    Matrix<T> B(rows, columns);
     for(int i = 0; i<rows; i++){
         std::cout << "\n";
         for(int j = 0; j<columns; j++){
@@ -86,7 +87,7 @@ void TerminalMatrix() {
     std::cout << "Matrix B:\n";
     B.Print();
 
-    Result X;
+    Result<T> X;
 
     float epsilon = 0.0001;
 
@@ -98,34 +99,45 @@ void TerminalMatrix() {
     }
 }
 
+template <typename T>
 void Debug() {
 
-    Matrix A(2,2);
+    Matrix<T> A(2,2);
     cin >> A;
     cout << A;
+
     /*std::cout << "\nEnter rational A: (numerator, denominator)\n";
     int numerator, denominator;
     //std::cin >> numerator >> denominator;
+    float tmpFloat;
+    int tmpInt;
     rational A(0);
     cin >> A;
-    //cout << "\nA: " << A.getNum() << "/" << A.getDenom() << "\n";
-    cout << A;
+
+    //cout << "\nA: " << A.getNumerator() << "/" << A.getDenominator() << "\n";
+    cout << A << "\n";
+    tmpInt = A;
+    tmpFloat = A;
+    cout << tmpInt << " " << tmpFloat << "\n";
     std::cout << "\nEnter rational B: (numerator, denominator)\n";
     //std::cin >> numerator >> denominator;
     rational B(0);
-    //cout << "\nB: " << B.getNum() << "/" << B.getDenom() << "\n";
+    //cout << "\nB: " << B.getNumerator() << "/" << B.getDenominator() << "\n";
     cin >> B;
-    cout << B;
+    cout << B << "\n";
+    tmpInt = B;
+    tmpFloat = B;
+    cout << tmpInt << " " << tmpFloat << "\n";
     cout << "==: {}" << bool(A==B) << endl;
     cout << "!=: {}" << bool(A!=B) << endl;
     rational tests = A + B;
-    cout << "+: {}" << tests.getNum() <<"/"<<tests.getDenom() << endl;
+    cout << "+: {}" << tests.getNumerator() << "/" << tests.getDenominator() << endl;
     tests = A - B;
-    cout << "-: {}" << tests.getNum() <<"/"<<tests.getDenom() << endl;
+    cout << "-: {}" << tests.getNumerator() << "/" << tests.getDenominator() << endl;
     tests = A * B;
-    cout << "*: {}" <<  tests.getNum() <<"/"<<tests.getDenom() << endl;
+    cout << "*: {}" << tests.getNumerator() << "/" << tests.getDenominator() << endl;
     tests = A / B;
-    cout << "/: {}" <<  tests.getNum() <<"/"<<tests.getDenom() << endl;*/
-
+    cout << "/: {}" << tests.getNumerator() << "/" << tests.getDenominator() << endl;
+*/
 
 }
