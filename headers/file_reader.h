@@ -21,7 +21,6 @@ public:
     bool sizet_reading(std::size_t&);
     bool char_reading(char&);
     bool string_reading(std::string&);
-    bool rational_reading(rational&);
 
 private:
     const char* file_name;

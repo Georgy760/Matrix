@@ -8,6 +8,7 @@
 #include <cassert>
 #include <utility> //std::swap
 #include <sstream>
+#include <regex>
 
 class RangeException : public std::exception {
 protected:
@@ -303,13 +304,26 @@ void Matrix::set_columns(std::size_t c) { columns = c; }
 void Matrix::set_size(std::size_t s) { size = s; }
 void Matrix::set_number(std::size_t n) { number = n; }
 
-std::istream &operator>>(std::istream &os, Matrix &m) {
+std::istream& operator>>(std::istream& is, Matrix& m) {
     for(int i = 0; i < m.rows; i++) {
         for (int j = 0; j < m.columns; j++) {
-            os >> m.data[i][j];
+            std::string input;
+            is >> input;
+            std::regex rational_regex("[[:digit:]]+\\/[[:digit:]]");
+            if (std::regex_match(input, rational_regex)) {
+                std::istringstream rational_is(input);
+                rational r;
+                rational_is >> r;
+                m.data[i][j] = r;
+            } else {
+                std::istringstream float_is(input);
+                float f;
+                float_is >> f;
+                m.data[i][j] = f;
+            }
         }
     }
-    return os;
+    return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Matrix &m) {

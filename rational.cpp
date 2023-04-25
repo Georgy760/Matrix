@@ -2,6 +2,8 @@
 #include "headers/rational.h"
 
 
+
+
 void rational::stabilizator(){
     int total = gcd(denominator, numerator);
     denominator = denominator / total;
@@ -24,6 +26,7 @@ rational::rational(int num){
     denominator = 1;
 }
 
+rational::rational() {}
 
 int rational::getNumerator() const{
     return numerator;
@@ -106,15 +109,15 @@ std::ostream &operator<<(std::ostream &os, const rational &r) {
     return os;
 }
 
-std::istream &operator>>(std::istream &os, rational &r) {
+std::istream &operator>>(std::istream &is, rational &r) {
     char unused;
 
-    os >> r.numerator;      // Read numerator
-    os >> unused;             // Read / and ignore it
-    os >> r.denominator;    // Read denominator
+    is >> r.numerator;      // Read numerator
+    is >> unused;             // Read / and ignore it
+    is >> r.denominator;    // Read denominator
 
 
-    return os;
+    return is;
 }
 
 

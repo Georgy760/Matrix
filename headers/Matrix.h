@@ -9,7 +9,7 @@
 #include <string>
 #include "rational.h"
 class Matrix {
-    friend std::istream& operator>>(std::istream & os, Matrix  &m);
+    friend std::istream& operator>>(std::istream & is, Matrix  &m);
     friend std::ostream& operator<<(std::ostream &os, Matrix const &m);
 public:
     Matrix();

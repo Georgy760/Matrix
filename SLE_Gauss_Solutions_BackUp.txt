@@ -1,0 +1,11 @@
+#1
+SS_The system has a single unique solution!
+X(1x2)
+-1.21622, 3.78378, 
+
+#2
+IS_The system has infinitely many solutions! Here is one of them.
+X(1x2)
+-0, 0, 
+
+1/2 17/2 1/2 1

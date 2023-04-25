@@ -8,7 +8,7 @@
 #include <fstream>
 
 class rational{
-    friend std::istream& operator>>(std::istream & os, rational  & r);
+    friend std::istream& operator>>(std::istream & is, rational  & r);
     friend std::ostream& operator<<(std::ostream &os, rational const &r);
 private:
     int denominator, numerator;
@@ -17,6 +17,7 @@ private:
 public:
     rational(int num, int denom);
     rational(int num);
+    rational();
 
     int getNumerator() const;
     int getDenominator() const;
