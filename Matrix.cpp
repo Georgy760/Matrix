@@ -17,46 +17,43 @@ public:
     RangeException(std::string in) : exception() {
         error_info = in;
     }
+
     void print() const {
         std::cout << this->error_info << "\n";
     }
 };
 
-Matrix::Matrix()
-        :rows(0), columns(0), size(0), number(0), data(nullptr)
-{
+Matrix::Matrix() //Конструктор по умолчанию
+        : rows(0), columns(0), size(0), number(0), data(nullptr) {
 }
 
-Matrix::Matrix(std::size_t r, std::size_t c)
-        :rows(r), columns(c), size(r * c)
-{
-    if(0 == columns && rows != 0) {
+Matrix::Matrix(std::size_t r, std::size_t c) //Конструктор инициализации
+        : rows(r), columns(c), size(r * c) {
+    if (0 == columns && rows != 0) {
         columns = rows;
         rows = 1;
         size = columns;
     }
 
-    data = new float*[rows];
-    for(std::size_t i = 0; i < rows; ++i) {
+    data = new float *[rows];
+    for (std::size_t i = 0; i < rows; ++i) {
         data[i] = new float[columns];
     }
 }
 
-Matrix::Matrix(const Matrix& M)
-        :rows(M.rows), columns(M.columns), size(M.size), number(M.number), data(new float*[M.rows])
-{
-    for(std::size_t i = 0; i < rows; ++i) {
+Matrix::Matrix(const Matrix &M) //Конструктор копирования
+        : rows(M.rows), columns(M.columns), size(M.size), number(M.number), data(new float *[M.rows]) {
+    for (std::size_t i = 0; i < rows; ++i) {
         data[i] = new float[columns];
-        for(std::size_t j = 0; j < columns; ++j) {
+        for (std::size_t j = 0; j < columns; ++j) {
             data[i][j] = M.data[i][j];
         }
     }
 }
 
 
-
-Matrix& Matrix::operator+(const Matrix& M){
-    if(size == M.size) {
+Matrix &Matrix::operator+=(const Matrix &M) {
+    if (size == M.size) {
         for (std::size_t i = 0; i < rows; ++i) {
             for (std::size_t j = 0; j < columns; ++j) {
                 data[i][j] += M.data[i][j];
@@ -65,9 +62,9 @@ Matrix& Matrix::operator+(const Matrix& M){
     }
     return *this;
 }
-//TODO change to +=, -=
-Matrix& Matrix::operator-(const Matrix& M){
-    if(size == M.size) {
+
+Matrix &Matrix::operator-=(const Matrix &M) {
+    if (size == M.size) {
         for (std::size_t i = 0; i < rows; ++i) {
             for (std::size_t j = 0; j < columns; ++j) {
                 data[i][j] -= M.data[i][j];
@@ -77,30 +74,27 @@ Matrix& Matrix::operator-(const Matrix& M){
     return *this;
 }
 
-Matrix& Matrix::operator*(const Matrix& M){
-    if(this->columns == M.rows) {
+Matrix &Matrix::operator*=(const Matrix &M) {
+    if (this->columns == M.rows) {
         Matrix tmp(rows, M.columns);
         for (std::size_t i = 0; i < rows; ++i) {
-            for(std::size_t k = 0; k < M.columns; ++k){
-                for(std::size_t j = 0; j < columns; ++j){
-                    //std::cout << "\n -> " << data[i][j]*M.data[j][k];
-                    tmp(i, k) += data[i][j]*M.data[j][k];
+            for (std::size_t k = 0; k < M.columns; ++k) {
+                for (std::size_t j = 0; j < columns; ++j) {
+                    tmp(i, k) += data[i][j] * M.data[j][k];
                 }
             }
         }
-        for(std::size_t i = 0; i < rows; ++i) {
+        for (std::size_t i = 0; i < rows; ++i) {
             delete[] data[i];
         }
         delete[] data;
-
         rows = tmp.rows;
         columns = tmp.columns;
         size = tmp.size;
-
-        data = new float*[rows];
-        for(std::size_t i = 0; i < rows; ++i) {
+        data = new float *[rows];
+        for (std::size_t i = 0; i < rows; ++i) {
             data[i] = new float[columns];
-            for(std::size_t j = 0; j < columns; ++j) {
+            for (std::size_t j = 0; j < columns; ++j) {
                 data[i][j] = tmp.data[i][j];
             }
         }
@@ -108,61 +102,53 @@ Matrix& Matrix::operator*(const Matrix& M){
     } else {
         throw RangeException(std::string("columns < rows"));
     }
-
 }
-Matrix& Matrix::operator*(const size_t& M){
-    for(std::size_t i = 0; i < rows; ++i){
-        for(std::size_t j = 0; j < columns; ++j) {
-            data[i][j] *=M;
+
+Matrix &Matrix::operator*=(const size_t &M) {
+    for (std::size_t i = 0; i < rows; ++i) {
+        for (std::size_t j = 0; j < columns; ++j) {
+            data[i][j] *= M;
         }
     }
     return *this;
 }
-Matrix& Matrix::operator*(const float& M){
-    for(std::size_t i = 0; i < rows; ++i){
-        for(std::size_t j = 0; j < columns; ++j) {
+
+Matrix &Matrix::operator*=(const float &M) {
+    for (std::size_t i = 0; i < rows; ++i) {
+        for (std::size_t j = 0; j < columns; ++j) {
             data[i][j] = data[i][j] * M;
         }
     }
     return *this;
 }
 
-Matrix& Matrix::operator/(const Matrix& M){
-    //TODO
-}
+Matrix &Matrix::operator=(const Matrix &M) {
+    if (&M == this) return *this;
 
-Matrix& Matrix::operator=(const Matrix& M)
-{
-    if(&M == this) {
-        return *this;
-    }
-
-    for(std::size_t i = 0; i < rows; ++i) {
+    for (std::size_t i = 0; i < rows; ++i)
         delete[] data[i];
-    }
     delete[] data;
 
     rows = M.rows;
     columns = M.columns;
     size = M.size;
 
-    data = new float*[rows];
-    for(std::size_t i = 0; i < rows; ++i) {
+    data = new float *[rows];
+    for (std::size_t i = 0; i < rows; ++i) {
         data[i] = new float[columns];
-        for(std::size_t j = 0; j < columns; ++j) {
+        for (std::size_t j = 0; j < columns; ++j) {
             data[i][j] = M.data[i][j];
         }
     }
-
     return *this;
 }
 
-bool Matrix::operator==(const Matrix& M){
+bool Matrix::operator==(const Matrix &M) {
     bool marker = true;
-    if(size == M.size) {
+    if (size == M.size) {
         for (std::size_t i = 0; i < rows; ++i) {
             for (std::size_t j = 0; j < columns; ++j) {
-                if(data[i][j] != M.data[i][j]){
+                if (data[i][j] != M.data[i][j]) {
                     marker = false;
                 }
             }
@@ -172,12 +158,12 @@ bool Matrix::operator==(const Matrix& M){
     return marker;
 }
 
-bool Matrix::operator!=(const Matrix& M){
+bool Matrix::operator!=(const Matrix &M) {
     bool marker = false;
-    if(size == M.size) {
+    if (size == M.size) {
         for (std::size_t i = 0; i < rows; ++i) {
             for (std::size_t j = 0; j < columns; ++j) {
-                if(data[i][j] != M.data[i][j]){
+                if (data[i][j] != M.data[i][j]) {
                     marker = true;
                 }
             }
@@ -187,33 +173,32 @@ bool Matrix::operator!=(const Matrix& M){
     return marker;
 }
 
-Matrix::~Matrix()
-{
-    for(std::size_t i = 0; i < rows; ++i) {
+Matrix::~Matrix() {
+    for (std::size_t i = 0; i < rows; ++i) {
         delete[] data[i];
     }
     delete[] data;
 }
 
-void Matrix::Print(){
+void Matrix::Print() {
     std::cout << "\n";
-    for(int i = 0; i<rows; i++){
-        for(int j = 0; j<columns; j++){
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
             std::cout << data[i][j] << "\t";
         }
         std::cout << "\n";
     }
 }
 
-Matrix& Matrix::Transpose() {
+Matrix &Matrix::Transpose() {
     Matrix Tmp(columns, rows);
-    for(int i = 0; i < rows; ++i){
-        for(int j = 0; j < columns; ++j){
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
             Tmp.data[j][i] = data[i][j];
         }
     }
 
-    for(std::size_t i = 0; i < rows; ++i) {
+    for (std::size_t i = 0; i < rows; ++i) {
         delete[] data[i];
     }
     delete[] data;
@@ -222,87 +207,86 @@ Matrix& Matrix::Transpose() {
     columns = Tmp.columns;
     size = Tmp.size;
 
-    data = new float*[rows];
-    for(std::size_t i = 0; i < rows; ++i) {
+    data = new float *[rows];
+    for (std::size_t i = 0; i < rows; ++i) {
         data[i] = new float[columns];
-        for(std::size_t j = 0; j < columns; ++j) {
+        for (std::size_t j = 0; j < columns; ++j) {
             data[i][j] = Tmp.data[i][j];
         }
     }
     return *this;
 }
 
-float Matrix::Determinant(){
+float Matrix::Determinant() {
     float result = 0;
-    if(rows == columns){
-        if(this->size > 4){
-            for(int k = 0; k<columns; ++k){
-                Matrix tmp(rows-1,columns-1);
+    if (rows == columns) {
+        if (this->size > 4) {
+            for (int k = 0; k < columns; ++k) {
+                Matrix tmp(rows - 1, columns - 1);
                 int step = 0;
-                for(int j = 0; j<tmp.columns; ++j){
-                    if(step == k) step++;
-                    for(int i = 0; i<tmp.rows; ++i){
-                        tmp(i,j) = data[i+1][step];
+                for (int j = 0; j < tmp.columns; ++j) {
+                    if (step == k) step++;
+                    for (int i = 0; i < tmp.rows; ++i) {
+                        tmp(i, j) = data[i + 1][step];
                     }
                     step++;
                 }
-                if(k%2 == 0){
+                if (k % 2 == 0) {
                     result += tmp.Determinant() * data[0][k];
                 } else {
-                    result += tmp.Determinant() * (-1*data[0][k]);
+                    result += tmp.Determinant() * (-1 * data[0][k]);
                 }
 
             }
 
         } else {
-            result = (data[0][0] * data[1][1])-(data[0][1] * data[1][0]);
+            result = (data[0][0] * data[1][1]) - (data[0][1] * data[1][0]);
             return result;
         }
 
     } else throw RangeException(std::string("Matrix is not cubic"));
     return result;
 }
-void Matrix::Swap_Rows(std::size_t i, std::size_t j)
-{
+
+void Matrix::Swap_Rows(std::size_t i, std::size_t j) {
     assert(i >= 0 && i < rows && "The Row index is out of range!\n");
     assert(j >= 0 && j < rows && "The row index is out of range!\n");
 
-    if(i == j) { return; }
+    if (i == j) { return; }
 
     std::swap(data[i], data[j]);
 }
 
 
-float& Matrix::operator()(std::size_t i, std::size_t j)
-{
+float &Matrix::operator()(std::size_t i, std::size_t j) {
     return data[i][j];
 }
 
-const float& Matrix::operator()(std::size_t i, std::size_t j) const
-{
+const float &Matrix::operator()(std::size_t i, std::size_t j) const {
     return data[i][j];
 }
 
 //vector represented as 1xn matrix, thus operator(with single parameter) returns elements from first row when we use it with mxn (m!=1) matrix
-float& Matrix::operator()(std::size_t i)
-{
+float &Matrix::operator()(std::size_t i) {
     return data[0][i];
 }
 
-const float& Matrix::operator()(std::size_t i) const
-{
+const float &Matrix::operator()(std::size_t i) const {
     return data[0][i];
 }
 
 std::size_t Matrix::get_rows() const { return rows; }
+
 std::size_t Matrix::get_columns() const { return columns; }
+
 std::size_t Matrix::get_size() const { return size; }
-std::size_t Matrix::get_number() const {return number; }
+
+std::size_t Matrix::get_number() const { return number; }
 
 void Matrix::set_number(std::size_t n) { number = n; }
 
-std::istream& operator>>(std::istream& is, Matrix& m) {
-    for(int i = 0; i < m.rows; i++) {
+std::istream &operator>>(std::istream &is, Matrix &m) {
+    for (int i = 0; i < m.rows; i++) {
         for (int j = 0; j < m.columns; j++) {
             std::string input;
             is >> input;
@@ -325,35 +309,30 @@ std::istream& operator>>(std::istream& is, Matrix& m) {
 
 std::ostream &operator<<(std::ostream &os, const Matrix &m) {
     std::ostringstream output_text;    // Declare an output stringstream
-    for(int i = 0; i < m.rows; i++){
-        for(int j = 0; j < m.columns; j++) {
+    for (int i = 0; i < m.rows; i++) {
+        for (int j = 0; j < m.columns; j++) {
             output_text << m.data[i][j] << ' ';
         }
         output_text << '\n';
-        }
+    }
     os << output_text.str();
 
     return os;
 }
 
 
-
-Result::Result () : Matrix(), state("")
-{
+Result::Result() : Matrix(), state("") {
 }
 
 Result::Result(std::string s, std::size_t r, std::size_t c)
-        : Matrix(r, c), state(s)
-{
+        : Matrix(r, c), state(s) {
 }
 
-Result::Result(const Result& R)
-        :Matrix(R) , state(R.state)
-{
+Result::Result(const Result &R)
+        : Matrix(R), state(R.state) {
 }
-//TODO найти решение для перегрузки
-Result& Result::operator=(const Result& R)
-{
+
+Result &Result::operator=(const Result &R) {
     Matrix::operator=(R);
     state = R.state;
 
@@ -362,5 +341,6 @@ Result& Result::operator=(const Result& R)
 
 
 void Result::set_state(std::string s) { state = s; }
+
 std::string Result::get_state() const { return state; }
 

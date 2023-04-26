@@ -7,37 +7,60 @@
 
 #include <fstream>
 
-class rational{
-    friend std::istream& operator>>(std::istream & is, rational  & r);
-    friend std::ostream& operator<<(std::ostream &os, rational const &r);
+class rational {
+    friend std::istream &operator>>(std::istream &is, rational &r);
+
+    friend std::ostream &operator<<(std::ostream &os, rational const &r);
+
 private:
     int denominator, numerator;
+
     void stabilizator();
+
     static int gcd(int a, int b);
+
 public:
     rational(int num, int denom);
+
     rational(int num);
+
     rational();
 
     int getNumerator() const;
-    int getDenominator() const;
-    rational operator+(const rational &a) const;
-    rational operator+(int a) const;
-    rational operator-(const rational &a) const;
-    rational operator-(int a) const;
-    rational operator*(const rational &a) const;
-    rational operator*(int a) const;
-    rational operator/(const rational &a) const;
-    rational operator/(int a) const;
-    operator int() const;
-    operator float() const;
-    bool operator==(const rational &a) const;
-    bool operator==(float a) const;
-    bool operator==(int a) const;
-    bool operator!=(const rational &a) const;
-    bool operator!=(float a) const;
-    bool operator!=(int a) const;
 
+    int getDenominator() const;
+
+    rational operator+(const rational &a) const;
+
+    rational operator+(int a) const;
+
+    rational operator-(const rational &a) const;
+
+    rational operator-(int a) const;
+
+    rational operator*(const rational &a) const;
+
+    rational operator*(int a) const;
+
+    rational operator/(const rational &a) const;
+
+    rational operator/(int a) const;
+
+    operator int() const;
+
+    operator float() const;
+
+    bool operator==(const rational &a) const;
+
+    bool operator==(float a) const;
+
+    bool operator==(int a) const;
+
+    bool operator!=(const rational &a) const;
+
+    bool operator!=(float a) const;
+
+    bool operator!=(int a) const;
 
 
     ~rational();

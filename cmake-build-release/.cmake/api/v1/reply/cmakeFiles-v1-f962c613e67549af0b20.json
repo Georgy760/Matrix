@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeSystem.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -270,7 +270,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -509,7 +509,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -598,7 +598,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeRCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -677,7 +677,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -776,7 +776,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
+			"path" : "cmake-build-release/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -787,7 +787,7 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "F:/Matrix/cmake-build-debug",
+		"build" : "F:/Matrix/cmake-build-release",
 		"source" : "F:/Matrix"
 	},
 	"version" : 

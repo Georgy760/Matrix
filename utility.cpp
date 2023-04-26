@@ -1,5 +1,5 @@
 //
-// Created by gosha on 10/26/2022.
+// Created by gosha on 10/26/2021.
 //
 
 #include "headers/file_reader.h"
@@ -10,27 +10,24 @@
 #include <cstddef>
 #include <cassert>
 
-bool Read_Matrix_Size (File_Reader& fr, Matrix& M)
-{
+bool Read_Matrix_Size(File_Reader &fr, Matrix &M) {
     char c;
     std::size_t row, col;
-    if(fr.char_reading(c) && fr.char_reading(c) &&
-       fr.sizet_reading(row) && fr.char_reading(c) &&
-       fr.sizet_reading(col) && fr.char_reading(c)) {
+    if (fr.char_reading(c) && fr.char_reading(c) &&
+        fr.sizet_reading(row) && fr.char_reading(c) &&
+        fr.sizet_reading(col) && fr.char_reading(c)) {
         M = Matrix(row, col);
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
 
-bool Read_Matrix_Data(File_Reader& fr, Matrix& M)
-{
+bool Read_Matrix_Data(File_Reader &fr, Matrix &M) {
     char c;
-    for(std::size_t i = 0; i < M.get_rows(); ++i) {
-        for(std::size_t j = 0; j < M.get_columns(); ++j) {
-            if(!(fr.float_reading(M(i, j)) && fr.char_reading(c))) {
+    for (std::size_t i = 0; i < M.get_rows(); ++i) {
+        for (std::size_t j = 0; j < M.get_columns(); ++j) {
+            if (!(fr.float_reading(M(i, j)) && fr.char_reading(c))) {
                 return false;
             }
         }
@@ -38,23 +35,22 @@ bool Read_Matrix_Data(File_Reader& fr, Matrix& M)
     return true;
 }
 
-bool Read_SLE(File_Reader& fr, Matrix& A, Matrix& B)
-{
+bool Read_SLE(File_Reader &fr, Matrix &A, Matrix &B) {
     char c;
     std::size_t number;
 
-    if(!(fr.char_reading(c) && fr.sizet_reading(number))) {
+    if (!(fr.char_reading(c) && fr.sizet_reading(number))) {
         return false;
     }
-    if(c != '#') {
+    if (c != '#') {
         std::cout << "Possibly incomplete data or data type mismatch.\n";
     }
 
-    if(!(Read_Matrix_Size(fr, A) && Read_Matrix_Data(fr, A))) {
+    if (!(Read_Matrix_Size(fr, A) && Read_Matrix_Data(fr, A))) {
         return false;
     }
 
-    if(!(Read_Matrix_Size(fr, B) && Read_Matrix_Data(fr, B))) {
+    if (!(Read_Matrix_Size(fr, B) && Read_Matrix_Data(fr, B))) {
         return false;
     }
 
@@ -67,35 +63,34 @@ bool Read_SLE(File_Reader& fr, Matrix& A, Matrix& B)
 }
 
 
-bool Read_Result(File_Reader& fr, Result& R)
-{
+bool Read_Result(File_Reader &fr, Result &R) {
     std::string s;
     char c;
     std::size_t m, n, number;
     float f;
-    if(!(fr.char_reading(c) && fr.sizet_reading(number))) {
+    if (!(fr.char_reading(c) && fr.sizet_reading(number))) {
         return false;
     }
 
-    if(!fr.string_reading(s)) {
+    if (!fr.string_reading(s)) {
         return false;
     }
-    if('N' == s[0]) {
+    if ('N' == s[0]) {
         R = Result(s, 0, 0);
         R.set_number(number);
         return true;
     }
 
-    if(!(fr.char_reading(c) && fr.char_reading(c) && fr.sizet_reading(m) &&
-         fr.char_reading(c) && fr.sizet_reading(n) && fr.char_reading(c))) {
+    if (!(fr.char_reading(c) && fr.char_reading(c) && fr.sizet_reading(m) &&
+          fr.char_reading(c) && fr.sizet_reading(n) && fr.char_reading(c))) {
         return false;
     }
 
     R = Result(s, m, n);
     R.set_number(number);
 
-    for(std::size_t i = 0; i < R.get_size(); ++i) {
-        if(!(fr.float_reading(f) && fr.char_reading(c))) {
+    for (std::size_t i = 0; i < R.get_size(); ++i) {
+        if (!(fr.float_reading(f) && fr.char_reading(c))) {
             return false;
         }
         R(i) = f;
@@ -105,36 +100,35 @@ bool Read_Result(File_Reader& fr, Result& R)
 }
 
 
-bool Write_SLE_Solution(File_Writer& fw,const Result& X)
-{
-    if(!(fw.char_writing('#') && fw.sizet_writing(X.get_number()) && fw.char_writing('\n'))) {
+bool Write_SLE_Solution(File_Writer &fw, const Result &X) {
+    if (!(fw.char_writing('#') && fw.sizet_writing(X.get_number()) && fw.char_writing('\n'))) {
         return false;
     }
 
-    if(!(fw.string_writing(X.get_state()) && fw.char_writing('\n'))) {
+    if (!(fw.string_writing(X.get_state()) && fw.char_writing('\n'))) {
         return false;
     }
 
-    if('N' == X.get_state()[0]) {
-        if(!fw.char_writing('\n')) {
+    if ('N' == X.get_state()[0]) {
+        if (!fw.char_writing('\n')) {
             return false;
         }
         return true;
     }
 
-    if(!(fw.string_writing("X(") && fw.float_writing(X.get_rows()) &&
-         fw.char_writing('x') && fw.float_writing(X.get_columns()) &&
-         fw.string_writing(")\n"))) {
+    if (!(fw.string_writing("X(") && fw.float_writing(X.get_rows()) &&
+          fw.char_writing('x') && fw.float_writing(X.get_columns()) &&
+          fw.string_writing(")\n"))) {
         return false;
     }
 
-    for(std::size_t i = 0; i < X.get_size(); ++i) {
-        if(!(fw.float_writing(X(i)) && fw.string_writing(", "))) {
+    for (std::size_t i = 0; i < X.get_size(); ++i) {
+        if (!(fw.float_writing(X(i)) && fw.string_writing(", "))) {
             return false;
         }
     }
 
-    if(!fw.string_writing("\n\n")) {
+    if (!fw.string_writing("\n\n")) {
         return false;
     }
 
